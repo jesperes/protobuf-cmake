@@ -17,5 +17,6 @@ else()
     )
   
   add_definitions( -DHAVE_CONFIG_H )
+  add_definitions( -Wno-deprecated )
 endif()
 
