@@ -26,7 +26,7 @@ set(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/repeated_field.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/service.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/common.cc
-  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/hash.cc
+#  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/hash.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/once.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/structurally_valid.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/strutil.cc
