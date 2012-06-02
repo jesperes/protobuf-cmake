@@ -38,3 +38,5 @@ set(SOURCES
 )
 
 add_library( libprotobuf STATIC ${SOURCES} )
+set_target_properties(libprotobuf PROPERTIES OUTPUT_NAME "protobuf")
+
