@@ -33,3 +33,6 @@ set(SOURCES
 
 add_library( libprotoc STATIC ${SOURCES} )
 target_link_libraries( libprotoc libprotobuf )
+set_target_properties(libprotoc PROPERTIES OUTPUT_NAME "protoc")
+
+
