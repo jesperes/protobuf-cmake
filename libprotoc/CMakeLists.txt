@@ -29,6 +29,13 @@ set(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_primitive_field.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_service.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/python/python_generator.cc
+
+  # new as of 2.4.1
+  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/zip_writer.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/plugin.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/plugin.pb.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/subprocess.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_string_field.cc
   )
 
 add_library( libprotoc STATIC ${SOURCES} )
