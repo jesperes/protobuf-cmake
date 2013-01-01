@@ -5,10 +5,9 @@ Written by Jesper Eskilson (jesper@eskilson.se)
 Requirements
 ------------
 
-* CMake version 2.6 
+* CMake version 2.6+
 
-* Protocol Buffers version 2.2.x. Version 2.3.0 is not supported in
-this version of protobuf-cmake.
+* Protocol Buffers version 2.4.x.
 
 Instructions
 ------------
