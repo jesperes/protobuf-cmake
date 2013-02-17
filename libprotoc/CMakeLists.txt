@@ -36,6 +36,7 @@ set(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/plugin.pb.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/subprocess.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_string_field.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_doc_comment.cc
   )
 
 add_library( libprotoc STATIC ${SOURCES} )

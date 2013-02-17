@@ -25,9 +25,10 @@ set(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/reflection_ops.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/repeated_field.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/service.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/common.cc
-#  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/hash.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/once.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/stringprintf.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/structurally_valid.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/strutil.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/substitute.cc
@@ -35,6 +36,7 @@ set(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/unknown_field_set.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/wire_format.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/wire_format_lite.cc
+#  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/hash.cc
 )
 
 add_library( libprotobuf STATIC ${SOURCES} )
