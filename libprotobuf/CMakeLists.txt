@@ -26,6 +26,7 @@ set(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/repeated_field.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/service.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/atomicops_internals_x86_msvc.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/common.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/once.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/stringprintf.cc
