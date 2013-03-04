@@ -2,7 +2,7 @@ project( libprotoc )
 
 include( ../protobuf-common.cmake )
 
-set(SOURCES
+append_if_exist(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/code_generator.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/command_line_interface.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/cpp/cpp_enum.cc
@@ -43,4 +43,7 @@ add_library( libprotoc ${SOURCES} )
 target_link_libraries( libprotoc libprotobuf )
 set_target_properties(libprotoc PROPERTIES OUTPUT_NAME "protoc")
 
-
+install(TARGETS libprotoc
+    LIBRARY DESTINATION ${LIB_DIR}
+    ARCHIVE DESTINATION ${LIB_DIR}
+    )
