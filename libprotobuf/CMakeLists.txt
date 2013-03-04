@@ -40,6 +40,6 @@ set(SOURCES
 #  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/hash.cc
 )
 
-add_library( libprotobuf STATIC ${SOURCES} )
+add_library( libprotobuf ${SOURCES} )
 set_target_properties(libprotobuf PROPERTIES OUTPUT_NAME "protobuf")
 
