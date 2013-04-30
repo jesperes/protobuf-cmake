@@ -86,6 +86,10 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
   endif()
 endif()
 
+
+if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
+    add_definitions("-DPROTOBUF_USE_DLLS")
+endif()
 add_definitions("-D_GNU_SOURCE=1")
 configure_file("config.h.in" "config.h")
 

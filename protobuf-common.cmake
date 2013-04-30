@@ -35,7 +35,8 @@ if(WIN32)
     # On windows .dlls need to be next to the binaries
     # TODO: We don't properly build .dlls
     # http://www.cmake.org/Wiki/BuildingWinDLL
-    set(LIB_DIR     bin)
+    # NOTE: findprotobuf doesn't work unless this is set to lib
+    set(LIB_DIR     lib)
 else()
     set(LIB_DIR     lib)
 endif()

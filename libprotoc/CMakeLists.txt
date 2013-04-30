@@ -39,11 +39,20 @@ append_if_exist(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_doc_comment.cc
   )
 
+if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
+    add_definitions("-DLIBPROTOC_EXPORTS")
+endif()
+
 add_library( libprotoc ${SOURCES} )
 target_link_libraries( libprotoc libprotobuf )
 set_target_properties(libprotoc PROPERTIES OUTPUT_NAME "protoc")
 
+if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
+    # Install 
+    install(TARGETS libprotoc
+        DESTINATION ${BIN_DIR}
+      )
+endif()
 install(TARGETS libprotoc
-    LIBRARY DESTINATION ${LIB_DIR}
-    ARCHIVE DESTINATION ${LIB_DIR}
+    DESTINATION ${LIB_DIR}
     )
