@@ -44,7 +44,7 @@ if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
     add_definitions("-DLIBPROTOBUF_EXPORTS")
 endif()
 
-add_library( libprotobuf SHARED ${SOURCES} )
+add_library( libprotobuf ${SOURCES} )
 set_target_properties(libprotobuf PROPERTIES OUTPUT_NAME "protobuf")
 
 if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
