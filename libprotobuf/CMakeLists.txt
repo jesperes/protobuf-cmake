@@ -40,12 +40,24 @@ append_if_exist(SOURCES
 #  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/hash.cc
 )
 
-add_library( libprotobuf ${SOURCES} )
+if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
+    add_definitions("-DLIBPROTOBUF_EXPORTS")
+endif()
+
+add_library( libprotobuf SHARED ${SOURCES} )
 set_target_properties(libprotobuf PROPERTIES OUTPUT_NAME "protobuf")
 
+if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
+    # Install a spare copy of the dlls to the bin directory for use by protoc.exe
+    install(TARGETS libprotobuf
+        DESTINATION ${BIN_DIR}
+      )
+endif()
+
 install(TARGETS libprotobuf
-    LIBRARY DESTINATION ${LIB_DIR}
-    ARCHIVE DESTINATION ${LIB_DIR}
+    # Don't specify 'LIBRARY' here since that causes problems when
+    # Trying to install DLL libraries
+     DESTINATION ${LIB_DIR}
     )
 
 # TODO: protobuf-lite
