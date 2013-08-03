@@ -30,6 +30,7 @@ set(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/once.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/structurally_valid.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/strutil.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/stringprintf.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/stubs/substitute.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/text_format.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/unknown_field_set.cc
