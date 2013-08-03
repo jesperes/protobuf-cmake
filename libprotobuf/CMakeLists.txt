@@ -1,6 +1,6 @@
-project( libprotobuf )
+project(libprotobuf)
 
-include( ../protobuf-common.cmake )
+include(../protobuf-common.cmake)
 
 set(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/importer.cc
@@ -67,18 +67,12 @@ if(    ${CMAKE_SYSTEM_PROCESSOR} MATCHES "i386"
 endif()
 
 if(BUILD_PROTOBUF_SHARED_LIBRARIES)
-  if(BUILD_PROTOBUF_FULL)
-    add_library(libprotobuf SHARED ${SOURCES})
-  endif()
-
+  add_library(libprotobuf SHARED ${SOURCES})
   if(BUILD_PROTOBUF_LITE)
     add_library(libprotobuf_lite SHARED ${SOURCES_LITE})
   endif()
 else()
-  if(BUILD_PROTOBUF_FULL)
-    add_library(libprotobuf STATIC ${SOURCES})
-  endif()
-
+  add_library(libprotobuf STATIC ${SOURCES})
   if(BUILD_PROTOBUF_LITE)
     add_library(libprotobuf_lite STATIC ${SOURCES_LITE})
   endif()

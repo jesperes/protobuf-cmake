@@ -41,8 +41,8 @@ set(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_doc_comment.cc
   )
 
-add_library( libprotoc STATIC ${SOURCES} )
-target_link_libraries( libprotoc libprotobuf )
+add_library(libprotoc STATIC ${SOURCES})
+target_link_libraries(libprotoc libprotobuf)
 set_target_properties(libprotoc PROPERTIES OUTPUT_NAME "protoc")
 
 
