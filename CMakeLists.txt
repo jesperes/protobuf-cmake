@@ -96,8 +96,21 @@ if (NOT PROTOBUF_ROOT)
   message(FATAL_ERROR "PROTOBUF_ROOT must be set to the location of protobuf sources.")
 endif()
 
+option(BUILD_PROTOBUF_FULL "Build full version of protobuf" ON)
+option(BUILD_PROTOBUF_LITE "Build lite version of protobuf" ON)
+option(BUILD_BUILD_SHARED_LIBRARSIE "Build protobuf as shared libraries" ON)
+
 message(STATUS "Protobuf sources in ${PROTOBUF_ROOT}")
 add_subdirectory(libprotobuf)
 add_subdirectory(libprotoc)
 add_subdirectory(protoc)
 
+set(PROTOBUF_PROTOC_EXECUTABLE $<TARGET_FILE:protoc> CACHE INTERNAL "Path to protobuf compiler")
+set(PROTOBUF_LIBRARY libprotobuf CACHE INTERNAL "libprotobuf")
+set(PROTOBUF_LITE_LIBRARY libprotobuf_lite CACHE INTERNAL "libprotobuf_lite")
+set(PROTOBUF_INCLUDE_DIR "${PROTOBUF_ROOT}/src" CACHE INTERNAL "libprotobuf")
+
+# Export this so a cross compile build can use the native build of protoc
+export(TARGETS protoc libprotobuf libprotobuf_lite
+       NAMESPACE "native-"
+       FILE "protobuf-native-exports.cmake")
