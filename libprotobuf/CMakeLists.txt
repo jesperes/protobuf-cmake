@@ -84,5 +84,10 @@ else()
   endif()
 endif()
 
-set_target_properties(libprotobuf PROPERTIES OUTPUT_NAME "protobuf")
-set_target_properties(libprotobuf_lite PROPERTIES OUTPUT_NAME "protobuf-lite")
+if(BUILD_PROTOBUF_FULL)
+  set_target_properties(libprotobuf PROPERTIES OUTPUT_NAME "protobuf")
+endif()
+
+if(BUILD_PROTOBUF_LITE)
+  set_target_properties(libprotobuf_lite PROPERTIES OUTPUT_NAME "protobuf-lite")
+endif()
