@@ -106,11 +106,27 @@ add_subdirectory(libprotoc)
 add_subdirectory(protoc)
 
 set(PROTOBUF_PROTOC_EXECUTABLE $<TARGET_FILE:protoc> CACHE INTERNAL "Path to protobuf compiler")
-set(PROTOBUF_LIBRARY libprotobuf CACHE INTERNAL "libprotobuf")
-set(PROTOBUF_LITE_LIBRARY libprotobuf_lite CACHE INTERNAL "libprotobuf_lite")
+
+if(BUILD_PROTOBUF_FULL)
+  set(PROTOBUF_LIBRARY libprotobuf CACHE INTERNAL "libprotobuf")
+endif()
+
+if(BUILD_PROTOBUF_LITE)
+  set(PROTOBUF_LITE_LIBRARY libprotobuf_lite CACHE INTERNAL "libprotobuf_lite")
+endif()
+
 set(PROTOBUF_INCLUDE_DIR "${PROTOBUF_ROOT}/src" CACHE INTERNAL "libprotobuf")
 
+set(EXPORTED_TARGETS protoc)
+if(BUILD_PROTOBUF_FULL)
+  list(APPEND ${EXPORTED_TARGETS} libprotobuf)
+endif()
+
+if(BUILD_PROTOBUF_LITE)
+  list(APPEND ${EXPORTED_TARGETS} libprotobuf_lite)
+endif()
+
 # Export this so a cross compile build can use the native build of protoc
-export(TARGETS protoc libprotobuf libprotobuf_lite
+export(TARGETS ${EXPORTED_TARGETS}
        NAMESPACE "native-"
        FILE "protobuf-native-exports.cmake")
