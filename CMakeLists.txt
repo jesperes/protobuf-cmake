@@ -98,7 +98,7 @@ endif()
 
 option(BUILD_PROTOBUF_FULL "Build full version of protobuf" ON)
 option(BUILD_PROTOBUF_LITE "Build lite version of protobuf" ON)
-option(BUILD_SHARED_LIBRARIES "Build protobuf as shared libraries" ON)
+option(BUILD_PROTOBUF_SHARED_LIBRARIES "Build protobuf as shared libraries" ON)
 
 message(STATUS "Protobuf sources in ${PROTOBUF_ROOT}")
 add_subdirectory(libprotobuf)

@@ -66,7 +66,7 @@ if(    ${CMAKE_SYSTEM_PROCESSOR} MATCHES "i386"
   endif()
 endif()
 
-if(BUILD_SHARED_LIBRARIES)
+if(BUILD_PROTOBUF_SHARED_LIBRARIES)
   if(BUILD_PROTOBUF_FULL)
     add_library(libprotobuf SHARED ${SOURCES})
   endif()
