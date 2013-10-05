@@ -1,13 +1,18 @@
 protobuf-cmake: CMake build files for Protocol Buffers
 
-Written by Jesper Eskilson (jesper@eskilson.se)
+Written by Jesper Eskilson (jesper@eskilson.se) with contributions from
+several other people.
 
 Requirements
 ------------
 
-* CMake version 2.6 
+* CMake version 2.6
+* Protobuf version 2.5.0
 
-* Protocol Buffers version 2.5.0rc1
+Download links
+--------------
+http://www.cmake.org/cmake/resources/software.html
+http://protobuf.googlecode.com/files/protobuf-2.5.0.tar.gz
 
 Instructions
 ------------
