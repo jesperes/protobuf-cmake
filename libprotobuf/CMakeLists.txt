@@ -38,6 +38,9 @@ append_if_exist(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/wire_format.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/wire_format_lite.cc
 #  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/hash.cc
+
+# v2.6.1
+  ${PROTOBUF_ROOT}/src/google/protobuf/io/strtod.cc
 )
 
 if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
@@ -90,6 +93,7 @@ append_if_exist(INSTALL_FILES_LIST
     ${PROTOBUF_ROOT}/src/google/protobuf/io/zero_copy_stream.h
     ${PROTOBUF_ROOT}/src/google/protobuf/io/zero_copy_stream_impl.h
     ${PROTOBUF_ROOT}/src/google/protobuf/io/zero_copy_stream_impl_lite.h
+    ${PROTOBUF_ROOT}/src/google/protobuf/io/strtod.h
     ${PROTOBUF_ROOT}/src/google/protobuf/message.h
     ${PROTOBUF_ROOT}/src/google/protobuf/message_lite.h
     ${PROTOBUF_ROOT}/src/google/protobuf/reflection_ops.h
