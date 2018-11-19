@@ -48,7 +48,9 @@ if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
 endif()
 
 add_library( libprotobuf ${SOURCES} )
-set_target_properties(libprotobuf PROPERTIES OUTPUT_NAME "protobuf")
+set_target_properties(libprotobuf
+    PROPERTIES OUTPUT_NAME "${LIB_PREFIX}protobuf"
+    DEBUG_POSTFIX "${protobuf_DEBUG_POSTFIX}")
 
 if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
     # Install a spare copy of the dlls to the bin directory for use by protoc.exe
