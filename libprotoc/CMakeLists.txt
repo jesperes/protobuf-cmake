@@ -52,10 +52,12 @@ endif()
 
 add_library( libprotoc ${SOURCES} )
 target_link_libraries( libprotoc libprotobuf )
-set_target_properties(libprotoc PROPERTIES OUTPUT_NAME "protoc")
+set_target_properties(libprotoc
+    PROPERTIES OUTPUT_NAME "${LIB_PREFIX}protoc"
+    DEBUG_POSTFIX "${protobuf_DEBUG_POSTFIX}")
 
 if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
-    # Install 
+    # Install
     install(TARGETS libprotoc
         DESTINATION ${BIN_DIR}
       )

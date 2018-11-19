@@ -26,3 +26,25 @@ this can be set like this:
 
 If you specify -DDOWNLOAD_PROTOBUF=1, the script will automatically
 download protobuf.
+
+For windows users with Visual Studio, an example build script can be like this:
+```bat
+::put this "build-vs2013.bat" file under root folder of this repo
+@echo off
+set build_dir=build-vs2013
+if not exist %build_dir% md %build_dir%
+cd %build_dir%
+cmake .. ^
+    -G "Visual Studio 12 2013" ^
+    -DCMAKE_INSTALL_PREFIX=%cd%/install ^
+    -DPROTOBUF_ROOT=D:/lib/protobuf-2.6.1 ^
+    -DCMAKE_BUILD_TYPE=Debug
+
+cmake --build . --config Debug
+cmake --build . --target install --config Debug
+
+cmake --build . --config Release
+cmake --build . --target install --config Release
+
+cd ..
+```

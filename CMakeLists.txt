@@ -2,6 +2,8 @@ project(Protobuf)
 cmake_minimum_required(VERSION 2.6)
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
+set(protobuf_DEBUG_POSTFIX "d"
+  CACHE STRING "Default debug postfix")
 include(CheckIncludeFiles)
 include(CheckCxxHashset)
 include(CheckCxxHashmap)
@@ -115,6 +117,15 @@ if(NOT PROTOBUF_ROOT)
 else()
   message(STATUS "Protobuf sources in ${PROTOBUF_ROOT}")
 endif()
+
+if (MSVC)
+  # Add the "lib" prefix for generated .lib outputs.
+  set(LIB_PREFIX lib)
+else (MSVC)
+  # When building with "make", "lib" prefix will be added automatically by
+  # the build tool.
+  set(LIB_PREFIX)
+endif (MSVC)
 
 add_subdirectory(libprotobuf)
 add_subdirectory(libprotoc)
